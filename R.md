@@ -148,7 +148,7 @@ To plot a continuous sine function.
 ### Pie diagram
 ```R
 > data<-c(26,3,10,1)
-> names<-c("Cirurgia", "Radiació", "Malaltia", "Altres")
+> names<-c("Name 1", "Name 2", "Name 3", "Other")
 > color<-c(2,3,4,5)
 > pie(data, labels=names, col=color, main="Title")
 ```
@@ -156,7 +156,7 @@ To plot a continuous sine function.
 To set the names you could also use:
 ```R
 > data<-c(26,3,10,1)
-> names(data)<-c("Cirurgia", "Radiació", "Malaltia", "Altres")
+> names(data)<-c("Name 1", "Name 2", "Name 3", "Other")
 > color<-c(2,3,4,5)
 > pie(data, col=color, main="Title")
 ```
@@ -165,7 +165,7 @@ To set the names you could also use:
 It's pretty similar to the pie diagram, but to name each class the keyword is `names` instead of `labels`.
 ```R
 > data<-c(26,3,10,1)
-> names<-c("Cirurgia", "Radiació", "Malaltia", "Altres")
+> names<-c("Name 1", "Name 2", "Name 3", "Other")
 > color<-c(2,3,4,5)
 > barplot(data, col=color, names=names, main="Title")
 ```
@@ -214,3 +214,28 @@ It performs a `n-1` division instead of `n`.
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.
    8.50   10.20   11.10   11.46   11.95   19.90
 ```
+
+## Probabilistic models
+There are 4 basic functions to get the distribution function, the mass or the density function, the quantiles and random values from the model.
+
+To get the value of F(x), where F is the distribution function of _distribu_.
+```R
+p<distribu>(x, params)
+```
+
+To get the value of f(x) (or p(x) in a discrete model):
+```R
+d<distribu>(x, params)
+```
+
+To get the p-quantile:
+```R
+q<distribu>(p, params)
+```
+
+To get _n_ random values from the model:
+```R
+r<distribu>(n, params)
+```
+
+Where _distribu_ is the type of distribution, for example `norm` for the normal distribution.
